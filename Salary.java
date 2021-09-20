@@ -4,22 +4,23 @@ public static void main(String args[]){
 Scanner sc=new Scanner(System.in);
 System.out.println("Enter basic salary");
 int salary=sc.nextInt();
-int hra=(15/100)*salary;
-int da=(6/100)*salary;
-int tax=0,gs,ns;
-gs=salary+hra+da;
-System.out.println(gs);
-if(gs<=500000){
-gs=gs+tax;
-} 
+float tax=0;
+float hra=0.15f;
+float da=0.60f;
+float totalsalary=0;
+if(salary<=500000){
+tax=0.0f;
+}
+else if(salary>500000 && salary<1000000)
+{
+tax=0.20f;
+}
+else{
+tax=0.30f;
+}
+tax=salary*tax;
+totalsalary=salary+(salary*hra)+(salary*da);
+System.out.println(salary);
+}
 
-else if(gs>=500001&&gs<=1000000){
-tax=gs*(20/100); 
 }
-else if(salary>=1000001){
-tax=gs*(30/100);
-}
-System.out.println(gs);
-ns=gs-tax;
-System.out.println(ns);
-}}
