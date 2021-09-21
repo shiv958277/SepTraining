@@ -19,8 +19,8 @@ else{
 tax=0.30f;
 }
 tax=salary*tax;
-totalsalary=salary+(salary*hra)+(salary*da);
-System.out.println(salary);
+totalsalary=salary+(salary*hra)+(salary*da)-tax;
+System.out.println(totalsalary);
 }
 
 }
